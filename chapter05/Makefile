@@ -8,6 +8,7 @@ all:
 	cd 08  &&  $(MAKE)
 	cd 09  &&  $(MAKE)
 	cd 10  &&  $(MAKE)
+	cd 11  &&  $(MAKE)
 
 
 .PHONY: clean
@@ -21,3 +22,4 @@ clean:
 	cd 08  &&  $(MAKE) clean
 	cd 09  &&  $(MAKE) clean
 	cd 10  &&  $(MAKE) clean
+	cd 11  &&  $(MAKE) clean
