@@ -9,8 +9,7 @@ int main()
     char month[12][10] = {"January", "February", "March", "April",
             "May", "June", "July", "August", "September", "October",
             "November", "December"};
-    char (&rMonth)[12][10] = month;
-    printMonthName(rMonth);
+    printMonthName(month);
 
     return 0;
 }
