@@ -9,15 +9,13 @@ int main()
 {
     int i;
     int j;
-    int& ri = i;
-    int& rj = j;
     cin >> i >> j;
     cout << i << " - " << j << endl;
 
     swapByPoint(&i, &j);
     cout << i << " - " << j << endl;
 
-    swapByReference(ri, rj);
+    swapByReference(i, j);
     cout << i << " - " << j << endl;
 
     return 0;
