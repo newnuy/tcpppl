@@ -22,18 +22,16 @@ int main()
     }
 
     double sum_all = 0;
-    int num_all = 0;
     for (map<string, score>::iterator iter = table.begin(); iter != table.end();
             ++iter) {
         double aver = iter->second.sum / iter->second.num;
         sum_all += aver;
-        ++num_all;
         cout << iter->first << " - " << iter->second.sum << " - "
             << aver <<endl;
     }
 
     cout << endl;
-    cout << sum_all << " - " << sum_all/num_all << endl;
+    cout << sum_all << " - " << sum_all/table.size() << endl;
 
     return 0;
 }
