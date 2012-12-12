@@ -1,0 +1,16 @@
+#include <iostream>
+
+using namespace std;
+
+// comment 0
+
+int main()
+{
+    // comment 1
+    cout << "Hello//";  // comment 2
+    cout << ", /*world!" << endl;  /* comment 3
+// comment 4
+    */
+
+    return 0;
+}
