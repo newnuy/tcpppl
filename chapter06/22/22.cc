@@ -26,17 +26,13 @@ int main()
 void remove_comment(istream &input, ostream &output)
 {
     char status = NORMAL;
-    int c;
-    int next_char;
+    char c;
+    char next_char;
     bool have_code_line = false;
     bool have_comment_line = false;
     string str;
 
-    while (true) {
-        c = input.get();
-        if (input.eof())
-            break;
-
+    while (input.get(c)) {
         bool is_output = false;
         switch (c) {
             case '\'':
@@ -104,8 +100,7 @@ void remove_comment(istream &input, ostream &output)
             case '/':
                 switch (status) {
                     case NORMAL:
-                        next_char = input.get();
-                        if (!input.eof()) {
+                        if (input.get(next_char)) {
                             switch (next_char) {
                                 case '*':
                                     status = BLOCK_COMMENT;
@@ -124,7 +119,6 @@ void remove_comment(istream &input, ostream &output)
                             }
                         }
                         else {
-                            input.putback(next_char);
                             is_output = true;
                         }
                         break;
@@ -150,8 +144,7 @@ void remove_comment(istream &input, ostream &output)
                         is_output = true;
                         break;
                     case BLOCK_COMMENT:
-                        next_char = input.get();
-                        if (!input.eof()) {
+                        if (input.get(next_char)) {
                             switch (next_char) {
                                 case '/':
                                     status = NORMAL;
@@ -165,7 +158,6 @@ void remove_comment(istream &input, ostream &output)
                             }
                         }
                         else {
-                            input.putback(next_char);
                             is_output = false;
                         }
                         break;
@@ -211,10 +203,7 @@ void remove_comment(istream &input, ostream &output)
                 else
                     break;
             }
-            for (string::iterator iter = str.begin(); iter != str.end();
-                    ++iter) {
-                output.put(*iter);
-            }
+            output << str;
             str = "";
             have_code_line = false;
             have_comment_line = false;
