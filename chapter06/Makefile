@@ -9,6 +9,7 @@ all:
 	cd 16  &&  $(MAKE)
 	cd 17  &&  $(MAKE)
 	cd 18  &&  $(MAKE)
+	cd 19  &&  $(MAKE)
 	cd 22  &&  $(MAKE)
 
 
@@ -24,4 +25,5 @@ clean:
 	cd 16  &&  $(MAKE) clean
 	cd 17  &&  $(MAKE) clean
 	cd 18  &&  $(MAKE) clean
+	cd 19  &&  $(MAKE) clean
 	cd 22  &&  $(MAKE) clean
