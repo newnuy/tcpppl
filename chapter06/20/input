@@ -1,0 +1,4 @@
+R=2.5
+D=5
+?area?d?r:pi*d*r/2
+s=1+area(D,R)*2
