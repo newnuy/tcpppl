@@ -28,8 +28,8 @@ int main(int argc, char **argv)
     *pStr = '\0';
 
     if (argc == 1) {
-        encrypt(str, len, static_cast<const char *>(0));
-        encrypt(str, len, static_cast<const char *>(0));
+        encrypt(str, static_cast<size_t>(len), static_cast<const char *>(0));
+        encrypt(str, static_cast<size_t>(len), static_cast<const char *>(0));
     }
     else {
         encrypt(str, len, *++argv);
